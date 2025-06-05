@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球电影数据分析大屏</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.0.0/dist/echarts-wordcloud.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: #e0e6f6;
+            font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+            box-shadow: 0 4px 32px 0 rgba(33,147,176,0.3);
+            padding: 36px 0 20px 0;
+            margin-bottom: 30px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 16px #2193b0, 0 0 4px #fff;
+            margin: 0;
+        }
+        .header .subtitle {
+            color: #e0e6f6;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .chart-container {
+            background: rgba(20, 40, 80, 0.85);
+            border-radius: 18px;
+            padding: 18px 18px 10px 18px;
+            margin-bottom: 28px;
+            box-shadow: 0 0 24px 0 #2193b0, 0 2px 8px 0 #000a;
+            border: 1.5px solid #2193b0;
+        }
+        .chart-title {
+            color: #6dd5ed;
+            font-size: 1.18em;
+            margin-bottom: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-left: 5px solid #2193b0;
+            padding-left: 12px;
+            text-shadow: 0 0 8px #2193b0;
+        }
+        .footer {
+            text-align: center;
+            color: #8ecae6;
+            font-size: 1rem;
+            margin: 40px 0 10px 0;
+            letter-spacing: 1px;
+            opacity: 0.85;
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .chart-title { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>全球电影数据分析大屏</h1>
+            <div class="subtitle">基于 TMDB 电影数据的可视化展示</div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        数据来源：The Movie Database (TMDB)
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html> 
